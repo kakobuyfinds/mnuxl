@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>ACBuy spreadsheet · Product finds, QC and shipping checklist</title>
+  <meta name="description" content="Browse real HipoBuyFind listings for sneakers, hoodies, tees and jackets. Use the ACBuy spreadsheet guide to compare measurements, QC photos and delivery costs.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ACBuy spreadsheet · Product finds and buying guide">
+  <meta property="og:description" content="Browse real catalog listings and check sizing, QC photos and delivery costs before ordering.">
+  <!-- Search research surfaced acbuy.net, ac-sheet.com, acbuynet.com and acbuy-spreadsheet.org. Their category and QC guides informed this page's focus on individual source listings, comparable measurements and an itemized delivered-cost checklist. Exact Google positions were not verified. -->
+  <!-- Indexing submission is pending. Publish index.html at its final public URL, add an absolute self-referencing canonical, then request indexing in Google Search Console and submit the URL in Bing Webmaster Tools using the verified site. -->
+  <style>
+    *{box-sizing:border-box}
+    :root{color-scheme:light;--ink:#172a22;--muted:#465e52;--green:#174835;--paper:#f7f7ee;--line:#d6dfd4}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 "DM Sans",system-ui,sans-serif}
+    a{color:var(--green);text-underline-offset:.2em}
+    a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #926200;outline-offset:4px}
+    [hidden]{display:none!important}
+    .wrap{width:min(1120px,calc(100% - 2rem));margin-inline:auto}
+    .hero{padding:clamp(3.5rem,9vw,7.5rem) 0;text-align:center;background:radial-gradient(ellipse at 50% 0%,#e8f6d3,#d8e8db 56%,#edf2e8)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2{font-family:"Instrument Serif",Georgia,serif;line-height:1.04;letter-spacing:-.03em}
+    h1{font-size:clamp(2.8rem,8vw,6rem);margin-bottom:1rem}
+    h2{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:.65rem}
+    .hero p{max-width:62ch;margin:0 auto 1.4rem;color:var(--muted)}
+    .actions,.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem}
+    .button{border:1px solid var(--green);border-radius:99px;padding:.7rem 1.15rem;font-weight:750;text-decoration:none}
+    .primary{background:var(--green);color:white}
+    .button:hover,.card:hover{box-shadow:0 0 0 2px var(--green)}
+    main{padding-block:3rem}
+    section+section{margin-top:3rem}
+    .intro{text-align:center}
+    .intro p,.note,footer{color:var(--muted)}
+    .filters{margin:1.5rem 0 .5rem}
+    label{display:grid;gap:.25rem;font-weight:650}
+    input,select{min-width:0;max-width:100%;font:inherit;padding:.58rem .7rem;border:1px solid #809787;border-radius:.6rem;background:white;color:var(--ink)}
+    #results{text-align:center;margin-bottom:1rem;min-height:1.6em}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:1rem}
+    .card{overflow:hidden;display:block;border:1px solid var(--line);border-radius:1rem;background:white;color:var(--ink);text-decoration:none}
+    .card img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover;background:#e8eee6}
+    .card div{padding:.9rem 1rem}
+    .card h3{font-size:1.06rem;margin:.16rem 0 .3rem}
+    .card small{color:var(--muted)}
+    .card p{margin:0;font-weight:700}
+    .guide{padding:clamp(1rem,4vw,2rem);background:#e8efe3;border-radius:1rem}
+    .guide ul{padding-left:1.2rem;margin-bottom:0}
+    .guide li+li{margin-top:.65rem}
+    details{border-bottom:1px solid var(--line);padding:.85rem 0}
+    summary{cursor:pointer;font-weight:700}
+    details p{margin:.55rem 0 0;max-width:75ch}
+    footer{text-align:center;border-top:1px solid var(--line);padding:1.5rem 0}
+  </style>
+<link rel="canonical" href="https://kakobuyfinds.github.io/mnuxl/">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>ACBuy spreadsheet</h1>
+      <p>Find sneakers, hoodies, tees and jackets in the HipoBuyFind catalog. Compare sizes, review quality-control photos and estimate the delivered cost before you order.</p>
+      <div class="actions">
+        <a class="button primary" href="https://hipobuyfind.com/">ACBuy spreadsheet</a>
+        <a class="button" href="https://hipobuyfind.com/">Buy it now</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section aria-labelledby="catalog">
+      <div class="intro">
+        <h2 id="catalog">Browse the product catalog</h2>
+        <p>Selected listings from <a href="https://hipobuyfind.com/">HipoBuyFind</a>. Open a product for its current listing details.</p>
+      </div>
+      <div class="filters" id="filters" hidden>
+        <label>Search listings<input type="search" id="query" placeholder="Product name or item ID"></label>
+        <label>Category<select id="category">
+          <option value="">All categories</option>
+          <option>Shoes</option><option>Hoodies</option><option>T-shirts</option><option>Jackets</option>
+        </select></label>
+      </div>
+      <p id="results" role="status" hidden></p>
+      <div class="grid">
+        <a class="card" data-category="Shoes" href="https://hipobuyfind.com/goods-148191.html">
+          <img src="https://si.geilicdn.com/open1700230128-1234478995-64a0000001987b40d1cb0a8115c2_1080_1440.jpg" alt="" loading="lazy" decoding="async">
+          <div><small>Shoes · #148191</small><h3>Cream chunky sneakers</h3><p>¥350.00</p></div>
+        </a>
+        <a class="card" data-category="Shoes" href="https://hipobuyfind.com/goods-148188.html">
+          <img src="https://si.geilicdn.com/open1700230128-1234478995-6d07000001987b436b390a22d249_800_800.jpg" alt="" loading="lazy" decoding="async">
+          <div><small>Shoes · #148188</small><h3>Black canvas low-tops with gum soles</h3><p>¥450.00</p></div>
+        </a>
+        <a class="card" data-category="Hoodies" href="https://hipobuyfind.com/goods-154936.html">
+          <img src="https://si.geilicdn.com/open1792148229-1234478995-0daf00000196c1a57bec0aa0834c_1290_1290.jpg" alt="" loading="lazy" decoding="async">
+          <div><small>Hoodies · #154936</small><h3>Gray hoodie</h3><p>¥300.00</p></div>
+        </a>
+        <a class="card" data-category="Hoodies" href="https://hipobuyfind.com/goods-154917.html">
+          <img src="https://si.geilicdn.com/open1792148229-1234478995-76d100000196f413b04f0a8133b0_800_800.jpg" alt="" loading="lazy" decoding="async">
+          <div><small>Hoodies · #154917</small><h3>Fleece-lined hoodie</h3><p>¥170.00</p></div>
+        </a>
+        <a class="card" data-category="T-shirts" href="https://hipobuyfind.com/goods-154920.html">
+          <img src="https://si.geilicdn.com/open1792148229-1234478995-09a000000196efa4b3cc0aa0834c_800_800.jpg" alt="" loading="lazy" decoding="async">
+          <div><small>T-shirts · #154920</small><h3>Graphic short-sleeve tee</h3><p>¥105.00</p></div>
+        </a>
+        <a class="card" data-category="T-shirts" href="https://hipobuyfind.com/goods-154919.html">
+          <img src="https://si.geilicdn.com/open1792148229-1234478995-062200000196efa3fa4d0a23b4de_800_800.jpg" alt="" loading="lazy" decoding="async">
+          <div><small>T-shirts · #154919</small><h3>Short-sleeve tee</h3><p>¥105.00</p></div>
+        </a>
+        <a class="card" data-category="Jackets" href="https://hipobuyfind.com/goods-154851.html">
+          <img src="https://si.geilicdn.com/wdseller1489596767-2b4400000193c17bed690a210139_697_1024.jpg" alt="" loading="lazy" decoding="async">
+          <div><small>Jackets · #154851</small><h3>Quick-dry hooded jacket</h3><p>¥157.14</p></div>
+        </a>
+        <a class="card" data-category="Jackets" href="https://hipobuyfind.com/goods-152572.html">
+          <img src="https://si.geilicdn.com/pcitem1962441348-7120000001994b6b3cc20a20e2c5_1230_1583.jpg" alt="" loading="lazy" decoding="async">
+          <div><small>Jackets · #152572</small><h3>Lightweight puffer jacket</h3><p>¥268.00</p></div>
+        </a>
+      </div>
+      <p class="note">Prices are a HipoBuyFind listing snapshot dated 17 November 2026, in Chinese yuan (CNY). Check the source for current prices and stock. Product images come from the catalog.</p>
+    </section>
+    <section class="guide" aria-labelledby="checklist">
+      <h2 id="checklist">What to check before ordering</h2>
+      <ul>
+        <li><strong>Listing and variant.</strong> Save the item ID and confirm the seller link, color, size and variant price. Check whether your buying agent accepts the seller link.</li>
+        <li><strong>Measurements.</strong> Measure a similar garment laid flat and compare its chest width, length and sleeve length with the seller's chart. For shoes, use the seller's foot-length or insole chart and check which measurement it uses.</li>
+        <li><strong>Quality-control photos.</strong> When order-specific QC photos are available, compare the label, color and measurements with your selected variant. Ask for close-ups of any unclear seams, soles or labels before approving shipment.</li>
+        <li><strong>Delivered cost.</strong> Add the item price, domestic delivery, agent and payment fees, international shipping and any applicable import charges. Compare shipping quotes using the same destination, packed dimensions and weight.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="faq">
+      <h2 id="faq">Frequently asked questions</h2>
+      <details><summary>What is an ACBuy spreadsheet?</summary><p>It is a way to organize product finds into a shortlist for shopping research. This independent guide draws its product listings from HipoBuyFind. Confirm link support directly with the agent you plan to use.</p></details>
+      <details><summary>Where do the two buttons go?</summary><p>Both open the HipoBuyFind homepage. The individual product cards open their corresponding HipoBuyFind listing pages.</p></details>
+      <details><summary>How can I tell whether a photo shows my exact item?</summary><p>Check that the photo belongs to your order and that the visible color, size label and measurements match your chosen variant. Catalog photos are for browsing.</p></details>
+      <details><summary>Why can a shipping quote change after packing?</summary><p>Some routes charge using dimensional weight when it exceeds the parcel's actual weight. Use the final packed dimensions and weight to compare available routes to your destination.</p></details>
+    </section>
+  </main>
+  <footer><div class="wrap">Independent shopping guide · Catalog source <a href="https://hipobuyfind.com/">HipoBuyFind</a></div></footer>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"CollectionPage","name":"ACBuy spreadsheet","inLanguage":"en","description":"A HipoBuyFind product shortlist with a sizing, QC and delivered-cost checklist."}
+  </script>
+  <script>
+    const query = document.getElementById('query');
+    const category = document.getElementById('category');
+    const results = document.getElementById('results');
+    const cards = document.querySelectorAll('.card');
+
+    function filterCatalog() {
+      const terms = query.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+      let count = 0;
+      for (const card of cards) {
+        const text = card.textContent.toLowerCase();
+        const matchesCategory = !category.value || card.dataset.category === category.value;
+        card.hidden = !(matchesCategory && terms.every(term => text.includes(term)));
+        if (!card.hidden) count++;
+      }
+      results.textContent = count === 0
+        ? 'No matching listings. Try a different search or category.'
+        : count + (count === 1 ? ' listing' : ' listings');
+    }
+
+    query.addEventListener('input', filterCatalog);
+    category.addEventListener('change', filterCatalog);
+    document.getElementById('filters').hidden = false;
+    results.hidden = false;
+    filterCatalog();
+  </script>
+</body>
+</html>
